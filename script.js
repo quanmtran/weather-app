@@ -1,20 +1,23 @@
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition((position) => {
-		const lat = position.coords.latitude;
-		const lon = position.coords.longitude;
+navigator.geolocation.getCurrentPosition(success, error);
 
-		fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=bdd750ade079d93ea128e97ee405c250&units=metric`)
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data);
-				render(data);
-			})
-			.catch((error) => console.log(error));
-	});
-} else {
+function success(position) {
+	const lat = position.coords.latitude;
+	const lon = position.coords.longitude;
+
+	fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=bdd750ade079d93ea128e97ee405c250&units=metric`)
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			render(data);
+		})
+		.catch((error) => console.log(error));
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
 	renderDummyData();
 }
 
