@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+$blue-1: #d4e8ff;
+$blue-2: #2c599d;
+$blue-3: #193a6f;
+$blue-4: #11224d;
+$white: whitesmoke;
+
+@mixin flex-box($direction, $justify, $align, $gap) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+@mixin container-bg {
+	background: linear-gradient(100deg, $blue-4, $blue-2);
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	padding: 30px 20px;
+	font-family: 'Ubuntu', sans-serif;
+	min-height: 100vh;
+	@include flex-box(row, center, flex-start, 0);
+	background: linear-gradient($blue-3, $blue-1);
+	color: $white;
+
+	.container {
+		width: 100%;
+		max-width: 600px;
+		@include flex-box(column, stretch, stretch, 1.5rem);
+
+		.main-container {
+			@include container-bg();
+			border-radius: 10px;
+			padding: 1rem 2rem;
+			box-shadow: 0 0.5rem 1.5rem $blue-4;
+			text-align: center;
+
+			.location {
+				font-size: 2rem;
+				font-weight: 700;
+			}
+
+			.current {
+				padding-bottom: 1rem;
+				border-bottom: 2px solid $white;
+				@include flex-box(row, stretch, stretch, 0);
+
+				.icon {
+					width: 100%;
+				}
+
+				.temp-and-desc {
+					width: 100%;
+
+					.temp {
+						font-size: 6rem;
+					}
+
+					.desc {
+						text-transform: capitalize;
+					}
+				}
+			}
+
+			.all-day {
+				padding-top: 1rem;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1rem;
+
+				.info-box {
+					& > div:first-child {
+						font-size: 1.5rem;
+					}
+
+					& > div:last-child {
+						text-transform: uppercase;
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+
+		.hourly-container {
+			.hourly {
+				@include flex-box(row, flex-start, stretch, 0.8rem);
+				overflow-x: auto;
+
+				& > div {
+					min-width: 4em;
+					padding: 0.5em;
+					text-align: center;
+					@include container-bg();
+					border-radius: 3px;
+					box-shadow: 0 0.5em 0.5em $blue-4;
+
+					.hour {
+						font-size: 0.9rem;
+					}
+
+					.icon {
+						height: 2.5rem;
+					}
+
+					.temp {
+						font-size: 1.3rem;
+					}
+				}
+			}
+		}
+
+		.daily-container {
+			.daily {
+				@include flex-box(column, flex-start, stretch, 1rem);
+
+				& > div {
+					@include flex-box(row, stretch, stretch, 0);
+					@include container-bg();
+					text-align: center;
+					padding: 0.8rem 0;
+					border-radius: 3px;
+					box-shadow: 0 0.2em 0.8em $blue-4;
+
+					& > div {
+						width: 100%;
+						@include flex-box(column, space-between, center, 0);
+
+						&:nth-child(2) {
+							@include flex-box(row, center, center, 0);
+
+							.icon {
+								width: 40%;
+								height: 100%;
+							}
+
+							.temp {
+								width: 30%;
+								height: 100%;
+								@include flex-box(column, space-between, center, 0);
+								font-size: 1rem;
+							}
+						}
+
+						& > div:first-child {
+							font-size: 1.1rem;
+						}
+
+						& > div:last-child {
+							font-size: 0.7rem;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.note {
+		color: $blue-4;
+		font-size: 0.8rem;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.heading {
+		color: $white;
+		text-shadow: 0.1em 0.1em 0 $blue-4;
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: 0.5em;
+	}
+
+	.icon {
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+}
+
+@media (max-width: 500px) {
+	:root {
+		font-size: 12px;
+	}
+}

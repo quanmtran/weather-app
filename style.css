@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 30px 20px;
+  font-family: 'Ubuntu', sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#193a6f), to(#d4e8ff));
+  background: linear-gradient(#193a6f, #d4e8ff);
+  color: whitesmoke;
+}
+
+body .container {
+  width: 100%;
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 1.5rem;
+}
+
+body .container .main-container {
+  background: linear-gradient(100deg, #11224d, #2c599d);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  -webkit-box-shadow: 0 0.5rem 1.5rem #11224d;
+          box-shadow: 0 0.5rem 1.5rem #11224d;
+  text-align: center;
+}
+
+body .container .main-container .location {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+body .container .main-container .current {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0;
+}
+
+body .container .main-container .current .icon {
+  width: 100%;
+}
+
+body .container .main-container .current .temp-and-desc {
+  width: 100%;
+}
+
+body .container .main-container .current .temp-and-desc .temp {
+  font-size: 6rem;
+}
+
+body .container .main-container .current .temp-and-desc .desc {
+  text-transform: capitalize;
+}
+
+body .container .main-container .all-day {
+  padding-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+body .container .main-container .all-day .info-box > div:first-child {
+  font-size: 1.5rem;
+}
+
+body .container .main-container .all-day .info-box > div:last-child {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+body .container .hourly-container .hourly {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0.8rem;
+  overflow-x: auto;
+}
+
+body .container .hourly-container .hourly > div {
+  min-width: 4em;
+  padding: 0.5em;
+  text-align: center;
+  background: linear-gradient(100deg, #11224d, #2c599d);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0.5em 0.5em #11224d;
+          box-shadow: 0 0.5em 0.5em #11224d;
+}
+
+body .container .hourly-container .hourly > div .hour {
+  font-size: 0.9rem;
+}
+
+body .container .hourly-container .hourly > div .icon {
+  height: 2.5rem;
+}
+
+body .container .hourly-container .hourly > div .temp {
+  font-size: 1.3rem;
+}
+
+body .container .daily-container .daily {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 1rem;
+}
+
+body .container .daily-container .daily > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0;
+  background: linear-gradient(100deg, #11224d, #2c599d);
+  text-align: center;
+  padding: 0.8rem 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0.2em 0.8em #11224d;
+          box-shadow: 0 0.2em 0.8em #11224d;
+}
+
+body .container .daily-container .daily > div > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+}
+
+body .container .daily-container .daily > div > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+}
+
+body .container .daily-container .daily > div > div:nth-child(2) .icon {
+  width: 40%;
+  height: 100%;
+}
+
+body .container .daily-container .daily > div > div:nth-child(2) .temp {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  font-size: 1rem;
+}
+
+body .container .daily-container .daily > div > div > div:first-child {
+  font-size: 1.1rem;
+}
+
+body .container .daily-container .daily > div > div > div:last-child {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+body .note {
+  color: #11224d;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+
+body .heading {
+  color: whitesmoke;
+  text-shadow: 0.1em 0.1em 0 #11224d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+body .icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (max-width: 500px) {
+  :root {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

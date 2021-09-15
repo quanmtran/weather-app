@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="main-container">
+				<div class="location">Where you are</div>
+				<div class="time">Today</div>
+				<div class="current">
+					<div class="icon"></div>
+					<div class="temp-and-desc">
+						<div class="temp">20°</div>
+						<div class="desc">beautiful</div>
+					</div>
+				</div>
+				<div class="all-day">
+					<div class="info-box">
+						<div class="temp-high">12°</div>
+						<div>high</div>
+					</div>
+					<div class="info-box">
+						<div class="wind">12m/s</div>
+						<div>wind</div>
+					</div>
+					<div class="info-box">
+						<div class="uvi">0.89</div>
+						<div>uvi</div>
+					</div>
+					<div class="info-box">
+						<div class="sunrise">06:00</div>
+						<div>sunrise</div>
+					</div>
+					<div class="info-box">
+						<div class="temp-low">5°</div>
+						<div>low</div>
+					</div>
+					<div class="info-box">
+						<div class="rain">12%</div>
+						<div>rain</div>
+					</div>
+					<div class="info-box">
+						<div class="humidity">20%</div>
+						<div>humidity</div>
+					</div>
+					<div class="info-box">
+						<div class="sunset">18:00</div>
+						<div>sunset</div>
+					</div>
+				</div>
+			</div>
+			<div class="hourly-container">
+				<div class="heading">Next 48 hours</div>
+				<div class="hourly"></div>
+			</div>
+			<div class="daily-container">
+				<div class="heading">Next 7 days</div>
+				<div class="daily"></div>
+			</div>
+			<div class="note">Data for display purpose only</div>
+		</div>
+		<template id="hourly">
+			<div>
+				<div class="hour">12am</div>
+				<div class="icon"></div>
+				<div class="temp">10°</div>
+			</div>
+		</template>
+		<template id="daily">
+			<div>
+				<div>
+					<div class="day">Day</div>
+					<div class="date">00/00</div>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<div class="temp">
+						<div class="temp-high">12°</div>
+						<div class="temp-low">4°</div>
+					</div>
+				</div>
+				<div>
+					<div class="wind">2.90m/s</div>
+					<div>wind</div>
+				</div>
+				<div>
+					<div class="rain">0%</div>
+					<div>rain</div>
+				</div>
+				<div>
+					<div class="humidity">0%</div>
+					<div>humidity</div>
+				</div>
+				<div>
+					<div class="uvi">0.92</div>
+					<div>uvi</div>
+				</div>
+			</div>
+		</template>
+	</body>
+</html>
